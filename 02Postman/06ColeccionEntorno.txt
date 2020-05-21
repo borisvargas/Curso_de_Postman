@@ -1,0 +1,29 @@
+¿Que es una coleccion y entorno en Postman?
+
+Entorno: Contexto o un grupo de valores. (Variable) Para no repetir el codigo (Global)
+
+Create an environment -->
+Name:   Courses API
+
+GLOBAL  --> Variable
+api_url     http://localhost:8000/api
+
+Ahora podemos usar la variable para hacer las peticiones
+GET
+{{api_url}}/courses/
+
+Tenemos que crear la variable dentro de nuestro ambiente que creamos: Courses API -->
+
+api_url     http://localhost:8000/api
+token       token asjkdhasdjk3jknjskndj3nkmkansdk2kjnkjaspdp
+
+POST
+{{api_url}}/comments/2/dislike/
+Header --->
+Authorization           {{token}}
+
+
+--------------------------- COLLECTION ---------------------------
+Miralo como una carpeta (folder), donde declaramos los requests
+
+New Collection ---> Name: Courses

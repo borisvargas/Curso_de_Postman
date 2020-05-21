@@ -1,0 +1,7 @@
+
+
+
+Comments Creations
+# this is the description for comments creation
+Request:
+- `content`: `String` specify the content of a comment

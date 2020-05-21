@@ -1,0 +1,27 @@
+GET
+http://localhost:8000/api/materials/4/comments/
+
+GET
+http://localhost:8000/api/comments/2/
+
+OPTIONS     --> Trae informacion relevante del endpoint que estamos trabajando
+http://localhost:8000/api/comments/2/
+
+PATCH       --> Actualizar un dato
+http://localhost:8000/api/comments/2/
+
+Body --> row
+{
+    content: "Editado"
+}
+
+PUT         --> Actulizar todo
+http://localhost:8000/api/comments/2/
+Body --> row
+{
+    content: "Editado",
+    likes: 100
+    material: 2
+}
+
+

@@ -1,0 +1,27 @@
+GET
+{{url_api}}/courses/?page_size=1&page=2&ordering=-ranking&begin_date=2019-11-23
+
+
+Pre-request Script          --->    JavaScript
+
+// Guardar en el environment el dia de hoy
+pm.environment.set("today", new Date().toISOString());
+
+// --> Verificamos que se agrego una variable en nuestro entorno 'Courses API' con el nombre: today
+
+GET
+{{url_api}}/courses/?page_size=1&page=2&ordering=-ranking&begin_date={{today}}
+
+Params --->
+page_size           1
+page                2
+ordering            ranking
+begin_date          {{today}}
+
+
+Ahora para el token, para automatiza y guardar en la variable token automaticamente
+POST
+{{api_url}}/api-token-auth/
+Tests --->
+var json = JSON.parse(responseBody);
+postman.setEnvironmentVariable("token", `Token ${json.token}`)

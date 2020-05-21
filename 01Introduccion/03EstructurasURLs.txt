@@ -1,0 +1,52 @@
+
+Colecciones: Es un conjunto de recursos, por ejemplo: courses es una colección de course.
+
+URL: (Uniform Resource Locator) es la ruta en la cual puede ser ubicado un recurso y ejecutar las operaciones sobre él.
+
+CRUD
+Siglas que hacen referencia a las operaciones básicas que se pueden ejecutar sobre un recurso:
+    C: Create (crear)
+    R: Read (leer)
+    U: Update (actualizar)
+    D: Delete (eliminar)
+
+Endpoints
+Es el punto final de la comunicación con un ente, en este caso, un endpoint está asociado a una URL y a las operaciones que podemos ejecutar. Este término es muy utilizado en las APIs.
+
+-   /get-all-courses : para obtener una colección de Cursos.
+-   /add-new-course: para crear un nuevo recurso de Cursos.
+-   /delete-all-courses: para eliminar todos los Cursos
+
+Entonces, ¿cuál es la buena práctica en este caso?
+/courses: Dependiendo del verbo HTTP se ejecutará una operación en particular. Quedaría así:
+GET /courses: trae la colección de Cursos.
+POST /courses: crea un nuevo recurso de Cursos.
+DELETE /courses: elimina todos los cursos.
+
+GET /courses/2/: vemos que acá se le está pasando algo que en los endpoints anteriores no veíamos, es el número 2, ese es el identificador único, de esta manera el API sabe que tiene que buscar el curso con ID 2 y retornarlo.
+
+
+
+Recursos anidados
+Hay veces en las que un recurso depende de otro recurso, por ejemplo, comentarios depende de materiales; usualmente en los APIs las anidaciones se hacen hasta dos niveles, es decir:
+
+materials/1/comments: estos son dos niveles
+materials/1/comments/2/answers/: son tres niveles, ahí lo ideal sería entonces separar el endpoint de comentarios y ejecutar comments/2/answers/
+
+Nuestro API
+Ya he dado algunos spoilers sobre lo que nuestro API hace, es un clon de lo que Platzi es, una plataforma es donde tenemos Cursos, Materiales, Videos y Comentarios.
+
+Una convención que se usa a la hora de documentar APIs es abstraer el endpoint de la URL del sitio al cual vamos a hacer la petición, puesto que esto al final es redundante de escribir, es decir, usualmente escribimos únicamente /api-token-auth/ en vez de [http://mistioweb.com/api-token-auth/](http://mistioweb.com/api-token-auth/).
+
+Los endpoints que tenemos:
+/api-token-auth/
+/courses
+/courses/:id/
+/courses/:id/upload_badge/
+/materials/
+/materials/:id/
+/materials/:id/comments/
+/comments/
+/comments/:id/
+/comments/:id/like/
+/comments/:id/dislike/

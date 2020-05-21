@@ -1,0 +1,44 @@
+POST
+http://localhost:8000/api/api-token-auth/
+
+Headers -->
+Content-Type        application/json
+
+Body ---> raw
+{
+    username: superadmin,
+    password: ThisIs@SecurePassw0rd
+}
+
+GET
+http://localhost:8000/api/materials/4/comments/
+
+POST
+http://localhost:8000/api/comments/
+{
+    Content: "This is a comment"
+    material: 4
+}
+Headers
+Content-Type        application/json
+Authorization       Token fkdlg2m23asj32k2kma2k2kls12lkpd
+
+POST
+http://localhost:8000/api/courses/
+{
+    name: "Curso Postman",
+    description: "The description",
+    teachers: [
+        {
+            name: "David",
+            description: "Big Data Analyst",
+            current_job: "Education Team Leader @ Platzi"
+        },
+        {
+            name "Eduardo",
+            description: "Data Science",
+            current_job: "Course Director"
+        }
+    ]
+}
+

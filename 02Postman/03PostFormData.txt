@@ -1,0 +1,25 @@
+POST
+http://localhost:8000/api/comments/1/like
+http://localhost:8000/api/comments/1/dislike
+Headers
+Authorization       Token fkdlg2m23asj32k2kma2k2kls12lkpd
+
+(utilizando FORMULARIO)
+POST
+http://localhost:8000/api/comments/
+Body --> x-www-form-urlencoded
+Headers -->
+Content-Type        application/x-www-form-urlencoded
+Authorization       Token fkdlg2m23asj32k2kma2k2kls12lkpd
+
+Abrimos la consola de POSTMAN ---> para poder ver mas datos de la peticion
+
+POST
+http://localhost:8000/api/courses/1/upload_badge/
+Body    --> Form-data
+
+badge ---> File
+
+GET
+http://localhost:8000/media/badges/imagen.png
+

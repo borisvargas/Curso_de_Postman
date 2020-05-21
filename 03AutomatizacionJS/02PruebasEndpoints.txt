@@ -1,0 +1,31 @@
+Pruebas automaticas
+
+POST
+{{api_url}}/api-token-auth/
+Tests --->
+
+pm.test("Status code is 200", function() {
+    pm.response.to.have.status(200);
+});
+pm.test("Response should be JSON", function {
+    pm.response.to.bo.json;
+});
+pm.test("Response should contains token", function() {
+    pm.response.to.have.jsonBody("token");
+    pm.environment.unset("token");
+    var json = JSON.parse(responseBody);
+    postman.setEnvironmentVariable("token", `Token ${json.token}`)
+});
+
+--> Parte de abajo tenemos: Tests Results
+
+
+Creacion de un comentario
+POST
+{{api_url}}/comments/
+
+Tests --->
+
+pm.test("Succesful POST Request", function {
+    pm.expect(pm.response.code).to.be.oneOf([201,202])
+});

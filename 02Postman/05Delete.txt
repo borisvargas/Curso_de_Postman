@@ -1,0 +1,9 @@
+DELETE
+http://localhost:8000/api/comments/1/
+Headers -->
+Authorization       Token fkdlg2m23asj32k2kma2k2kls12lkpd
+
+204 --> No content
+
+GET
+200 --> OK

@@ -1,0 +1,8 @@
+GET
+http://localhost:8000/api/courses/?page_size=1&page=2&ordering=-ranking&begin_date=2019-11-23
+
+Params -->
+page_size=1             // Cantidad de results por pagina
+page=2                  // Numero de pagina
+ordering=-ranking       // ranking de menor a mayor y -ranking de mayor a menor
+begin_date=2019-11-23   // fecha

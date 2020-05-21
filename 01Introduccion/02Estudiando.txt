@@ -1,0 +1,28 @@
+
+HTTP: Un protocolo especifica reglas de comunicacion, en este caso, entre dos computadores.
+
+Verbos HTTP
+GET: Solicitar datos o algun recurso.
+HEAD: Traer headers, como una peticion GET pero sin contenido.
+POST: Enviar datos a un recurso para la creacion.
+PUT: Reemplazar por completo un recurso.
+DELETE: Eliminar un recurso.
+PATCH: Actualizar informacion, solo una parte.
+
+HTTP Status Code: Sirven para describir el estado de la peticion hecha al servidor.
+
+1xx. Indica que la peticion fue recibida y el servidor sigue trabajando en el proceso
+2xx. La petecion fue recibida, aceptada y procesada correctamente
+3xx. Hay que tomar acciones adicionales para completar la solicitud. Por lo general estos codigos indican redireccion
+4xx. Errores del lado del cliente. Indica que se hizo mal una solicitud, faltan datos, headers o cualquier otro error que pueda ocurrir
+5xx. Errores del servidor. Indica que fallo completamente la ejecucion
+
+CODIGOS MAS USADOS
+200 ok
+201 post ok y se guardo o se creo
+204 se proceso pero o retorna algo ejemplo delete
+400 bad request se dejo de enviar algo, o hay algo malo con la solicitud, trae informacoin de porque fallo
+401 unauthorized, falto autenticacion
+403 forbiden, no tengo acceso al recurso aunque este autentificado
+404 no existe el recurso not found.
+500 internal server error . no se puedo procesar por que el servidor no esta.
